@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wasm Counter</title>
+    <script type="module">
+        import init, { Counter } from './pkg/wasm_counter.js';
+
+        async function run() {
+            await init();
+
+            const counter = Counter.new();
+            const counterDisplay = document.getElementById("counter");
+
+            function updateDisplay() {
+                counterDisplay.innerText = counter.get_value();
+            }
+
+            document.getElementById("increment").onclick = () => {
+                counter.increment();
+                updateDisplay();
+            };
+
+            document.getElementById("decrement").onclick = () => {
+                counter.decrement();
+                updateDisplay();
+            };
+
+            updateDisplay();
+        }
+
+        run();
+    </script>
+</head>
+<body>
+    <h1>Counter: <span id="counter">0</span></h1>
+    <button id="increment">Increment</button>
+    <button id="decrement">Decrement</button>
+</body>
+</html>
+

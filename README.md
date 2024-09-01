@@ -25,13 +25,15 @@ Before you begin, ensure you have the following installed:
    cd wasm_counter
    ```
 2. **Build the WebAssembly package:**
-   ```sh
+  
+  ```sh
   wasm-pack build --target web
- ```
+  ```
 
 3. **Running the Application:**
    To run the application locally, you can use a simple HTTP server. Here’s how to do it with Python:
-   ```sh
+  
+    ```sh
     python3 -m http.server 8080
    ```
  
@@ -39,10 +41,10 @@ Before you begin, ensure you have the following installed:
 
 ## Project Structure
 
-src/lib.rs: The main Rust code that defines the Counter struct and its methods.
+**src/lib.rs:** The main Rust code that defines the Counter struct and its methods.
 
-Cargo.toml: Configuration file specifying the project dependencies and crate type.
+**Cargo.toml**: Configuration file specifying the project dependencies and crate type.
 
-index.html: The HTML file that includes the user interface and JavaScript to interact with the Rust WebAssembly module.
+**index.html**: The HTML file that includes the user interface and JavaScript to interact with the Rust WebAssembly module.
 
-pkg/: The output directory where the WebAssembly and JavaScript files are generated after running wasm-pack build.
+**pkg/:** The output directory where the WebAssembly and JavaScript files are generated after running wasm-pack build.
